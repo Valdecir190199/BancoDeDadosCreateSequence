@@ -1,0 +1,35 @@
+create table Produto(
+idprod  serial primary key,
+nome varchar (100) not null,
+preco money  not null,
+qtd_estoque int not null
+);
+
+drop table Produto
+
+insert into Produto (nome, preco, qtd_estoque) values ('Paçoca', 0.50, 1000);
+insert into Produto (nome, preco, qtd_estoque) values ('Amendoim', 1.00, 1000);
+insert into Produto (nome, preco, qtd_estoque) values ('Doce', 1.50, 1000);
+
+select * from Produto
+
+
+create sequence Item increment 3;
+
+
+create table TabelaItem(
+iditem integer primary key default nextval('Item'),
+nome varchar (100) not null,
+preco money not null,
+qtd_estoque integer not null
+);
+
+
+insert into TabelaItem (nome, preco, qtd_estoque) values ('Sacola',0.00, 1000);
+
+insert into TabelaItem (nome, preco, qtd_estoque) values ('Papel Toalha',0.00, 1000);
+
+insert into TabelaItem (nome, preco, qtd_estoque) values ('Computador',3000.00, 1000);
+
+select * from TabelaItem;
+
